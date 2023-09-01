@@ -1,0 +1,40 @@
+%seat{
+    width: 21px;
+    height: 21px;
+    border: solid 1px black;
+    border-radius: 12px 12px 0 0;
+    filter: brightness(1.35)
+}
+.available{
+   @extend %seat;
+   background-color: $color-available;
+   border-color: $color-available;
+}
+.available-seat{
+    @extend .available;
+}
+
+.booked{
+    @extend %seat;
+    background-color: $color-booked;
+    border-color: $color-booked;
+}
+.booked-seat{
+    @extend .booked;
+}
+.unavailable{
+    @extend %seat;
+    background-color: $color-unavailable;
+    border-color: $color-unavailable;
+}
+.available-seat:hover,.booked-seat:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.theatre-screen{
+    width: 21rem;
+    height: 12rem;
+    background-color: white;
+    transform: rotateX(57deg);
+    box-shadow: 0.7px 0.7px 27px white;
+}

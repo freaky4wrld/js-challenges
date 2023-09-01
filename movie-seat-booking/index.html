@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Seat Bookings</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="movie-pick">
+            <label for="movie-name">Select a movie:</label>
+            <select name="movie-name" id="movie-name">
+                <option value="">Lion King ($9)</option>
+                <option value="">Joker ($4)</option>
+                <option value="">Barbie ($7)</option>
+            </select>
+        </div>
+        <legend>
+            <div class="legend-text"><p class="available"></p><span>Available</span></div>
+            <div class="legend-text"><p class="booked"></p><span>Selected</span></div>
+            <div class="legend-text"><p class="unavailable"></p><span>Occupied</span></div>
+        </legend>
+        <div class="theatre-screen"></div>
+        <div class="seats">
+            <div class="side"></div>
+            <div class="mid"></div>
+            <div class="side"></div>
+        </div>
+        <p class="amount-description">
+            You have selected <span class="booked-seats"></span> seats for a price of <span class="price"></span>
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

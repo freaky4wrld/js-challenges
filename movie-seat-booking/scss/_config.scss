@@ -1,0 +1,23 @@
+$color-booked: #529b9c;
+$color-available: #9cba8f;
+$color-unavailable: #d27575;
+$movie-hall-color: #675a55;
+
+
+@mixin flexCol(){
+    display: flex;
+    flex-direction: column;
+}
+@mixin reset(){
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin seatSpace($width){
+    display: flex;
+    width: $width;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    justify-content: center;
+    align-items: center;
+}

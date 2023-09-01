@@ -1,0 +1,46 @@
+@import 'config';
+@import 'utilities';
+
+*{
+    @include reset;
+}
+body{
+    background-color: $movie-hall-color;
+}
+legend{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 60%;
+}
+p,label,span{
+    color: burlywood;
+}
+.legend-text{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.content{
+    width: 50%;
+    margin: 4rem auto;
+    @include flexCol;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.seats{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.side{
+    @include seatSpace(17%);
+}
+.mid{
+    @include seatSpace(31%);
+}
+.price,.booked-seats{
+    color: $color-booked;
+}
