@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="video-player">
+        <video controls>
+            <source src="assets/pexels-ron-lach-8100336 (2160p).mp4" type="video/mp4">
+        </video>
+        <div class="controls">
+            <button class="play" aria-label="play/pause video">
+                <img src="assets/play_arrow_FILL0_wght400_GRAD0_opsz24.svg">
+            </button>
+            <button class="stop" aria-label="stop video">
+                <img src="assets/stop_FILL0_wght400_GRAD0_opsz24.svg">
+            </button>
+            <div class="timer">
+                <div class="bg">
+                    <div class="fg"></div>
+                </div>
+                <span aria-label="video synced timer">00:00</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

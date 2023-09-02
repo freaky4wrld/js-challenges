@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+}
+.video-player{
+    width: 63%;
+    margin: 4rem auto;
+    // border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+video{
+    width: 100%;
+}
+.controls{
+    visibility: hidden;
+    // opacity: 0.4;
+    width: 100%;
+    display: flex;
+    gap: 0.5rem
+}
+button, .controls {
+    background: linear-gradient(to bottom,#222,#666);
+  }
+
+.timer{
+    flex: 5;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.bg{
+    width: 90%;
+    height: 0.7rem;
+    background-color: black;
+    border-radius: 9px;
+}
+.fg{
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: white;
+    z-index: 2;
+    border-radius: 50%;
+}
+span{
+    color: white;
+}
+button{
+    border: none;
+    width: 4%;
+}
