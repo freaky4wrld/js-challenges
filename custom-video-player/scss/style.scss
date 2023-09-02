@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import 'slider';
 
 *{
@@ -6,7 +7,13 @@
     box-sizing: border-box;
 }
 body{
-    background-color: white;
+    background-color: #b2bec3;
+    font-family: 'Special Elite', cursive;
+    font-weight: bolder;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
 }
 .hide{display: none;}
 .video-player{
@@ -19,18 +26,24 @@ body{
 }
 video{
     width: 100%;
+    border-radius: 9px 9px 0px 0px;
 }
 .controls{
     visibility: hidden;
+    padding: 1rem;
     // opacity: 0.4;
     width: 100%;
     display: flex;
-    gap: 0.5rem
+    gap: 0.5rem;
+    border-radius: 0px 0px 9px 9px;
 }
-button, .controls {
-    background: linear-gradient(to bottom,#222,#666);
+ .controls {
+    background: linear-gradient(to bottom,#b2bec3,#636e72,#2d3436);
   }
-
+  img{
+    width: 100%;
+    margin: 0.01px auto;
+  }
 .timer{
     flex: 5;
     display: flex;
@@ -41,6 +54,8 @@ span{
     color: white;
 }
 button{
-    border: none;
-    width: 4%;
+    border: 0px solid #636e72;
+    border-radius: 50%;
+    width: 3%;
+    background-color: #b2bec3;
 }
