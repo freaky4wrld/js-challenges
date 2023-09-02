@@ -1,3 +1,5 @@
+@import 'slider';
+
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +8,7 @@
 body{
     background-color: white;
 }
+.hide{display: none;}
 .video-player{
     width: 63%;
     margin: 4rem auto;
@@ -33,19 +36,6 @@ button, .controls {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-}
-.bg{
-    width: 90%;
-    height: 0.7rem;
-    background-color: black;
-    border-radius: 9px;
-}
-.fg{
-    width: 0.7rem;
-    height: 0.7rem;
-    background-color: white;
-    z-index: 2;
-    border-radius: 50%;
 }
 span{
     color: white;
