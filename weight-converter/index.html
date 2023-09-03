@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Weight Converter</title>
+    <style>
+        body{
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">Weight Converter</h1>
+                <form class="mb-3">
+                    <div class="form-group">
+                        <input type="number" class="form-control form-control-lg"
+                          placeholder="Enter Pounds......." id="lbsInput">
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card bg-primary text-white mb-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Grams:</h4>
+                            <div id="gmOutput" class="card-text"></div>
+                        </div>
+                    </div>
+                    <div class="card bg-success text-white mb-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Kilograms:</h4>
+                            <div id="kgOutput" class="card-text"></div>
+                        </div>
+                    </div>
+                    <div class="card bg-danger text-white mb-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Ounces:</h4>
+                            <div id="ozOutput" class="card-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
