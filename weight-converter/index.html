@@ -25,20 +25,28 @@
                           placeholder="Enter Pounds......." id="lbsInput">
                     </div>
                 </form>
+                <select class="form-select form-select-md mb-3" aria-label="Large select example">
+                    <option selected>Select the Weight Units</option>
+                    <option>Pounds</option>
+                    <option>Grams</option>
+                    <option>Kilograms</option>
+                    <option>Ounce</option>
+                  </select>
+                  
                 <div id="output">
-                    <div class="card bg-primary text-white mb-2">
+                    <div class="card bg-primary text-white mb-2" id="grams">
                         <div class="card-body">
                             <h4 class="card-title">Grams:</h4>
                             <div id="gmOutput" class="card-text"></div>
                         </div>
                     </div>
-                    <div class="card bg-success text-white mb-2">
+                    <div class="card bg-success text-white mb-2" id="kilos">
                         <div class="card-body">
                             <h4 class="card-title">Kilograms:</h4>
                             <div id="kgOutput" class="card-text"></div>
                         </div>
                     </div>
-                    <div class="card bg-danger text-white mb-2">
+                    <div class="card bg-danger text-white mb-2" id="ounces">
                         <div class="card-body">
                             <h4 class="card-title">Ounces:</h4>
                             <div id="ozOutput" class="card-text"></div>
