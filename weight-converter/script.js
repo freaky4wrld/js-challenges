@@ -1,5 +1,6 @@
 const selectWeightUnit = document.querySelector('select'); // get the weight units
 const outputConversion = document.getElementById('output'); // output the conversion
+const weightInput = document.getElementById('lbsInput'); // weight Input
 //result-display in the card
 const gramsDisplay = document.getElementById('gmOutput');
 const kilosDisplay = document.getElementById('kgOutput');
@@ -11,7 +12,7 @@ const ounces  = document.getElementById('ounces');
 outputConversion.style.visibility = 'hidden' // hide the output of conversion
 
 //perform calculations on providing input
-document.getElementById('lbsInput').addEventListener('input',(e)=>{
+weightInput.addEventListener('input',(e)=>{
     outputConversion.style.visibility = 'visible'
     let weight = e.target.value;
     switch (selectWeightUnit.selectedIndex) {
@@ -35,7 +36,8 @@ document.getElementById('lbsInput').addEventListener('input',(e)=>{
 
 // toggle cards and show result on the current input
 selectWeightUnit.addEventListener('change',()=>{
-    let weight = document.getElementById('lbsInput').value //get the input value
+    
+    let weight = weightInput.value //get the input value
     //get the selected weight unit
     switch (selectWeightUnit.selectedIndex) {
         case 0:
@@ -48,12 +50,18 @@ selectWeightUnit.addEventListener('change',()=>{
                 showWeight(ounces)
                 // calculations
                 fromPounds(weight)
+                //place-holder toggle
+                weightInput.placeholder = "Enter Pounds......."
+                weightInput.ariaPlaceholder = "Enter Pounds......."
             }
             else{
                 // card-toggling
                 showWeight(grams)
                 showWeight(kilos)
                 showWeight(ounces)
+                fromPounds(weight)
+                weightInput.placeholder = "Enter Pounds......."
+                weightInput.ariaPlaceholder = "Enter Pounds......."
             }
             break;
             fromPounds(weight)
@@ -67,6 +75,9 @@ selectWeightUnit.addEventListener('change',()=>{
                 showWeight(kilos)
                 //calculations
                 fromGrams(weight)
+                //placeholder toggle
+                weightInput.placeholder = "Enter Grams......."
+                weightInput.ariaPlaceholder = "Enter Grams......."
             }else{
                 //card creation
                 createPoundsCard()
@@ -76,6 +87,8 @@ selectWeightUnit.addEventListener('change',()=>{
                 showWeight(kilos)
                 poundColor('#0275d8 ')
                 fromGrams(weight)
+                weightInput.placeholder = "Enter Grams......."
+                weightInput.ariaPlaceholder = "Enter Grams......."
             }
             break;
         case 3:
@@ -86,6 +99,8 @@ selectWeightUnit.addEventListener('change',()=>{
                 showWeight(grams)
                 poundColor('#5cb85c ')
                 fromKilos(weight)
+                weightInput.placeholder = "Enter Kilos......."
+                weightInput.ariaPlaceholder = "Enter Kilos......."
             }else{
                 createPoundsCard()
                 hideWeight(kilos)
@@ -94,6 +109,8 @@ selectWeightUnit.addEventListener('change',()=>{
                 showWeight(grams)
                 poundColor('#5cb85c ')
                 fromKilos(weight)
+                weightInput.placeholder = "Enter Kilos......."
+                weightInput.ariaPlaceholder = "Enter Kilos......."
             }
             break;
         case 4:
@@ -104,6 +121,8 @@ selectWeightUnit.addEventListener('change',()=>{
                 showWeight(grams)
                 poundColor('#d9534f ')
                 fromOunces(weight)
+                weightInput.placeholder = "Enter Ounces......."
+                weightInput.ariaPlaceholder = "Enter Ounces......."
             }else{
                 createPoundsCard()
                 hideWeight(ounces)
@@ -112,6 +131,8 @@ selectWeightUnit.addEventListener('change',()=>{
                 showWeight(grams)
                 poundColor('#d9534f ')
                 fromOunces(weight)
+                weightInput.placeholder = "Enter Ounces......."
+                weightInput.ariaPlaceholder = "Enter Ounces......."
             }
             break;
         default:
