@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rate Calculator</title>
+</head>
+<body>
+    <header>
+        <div class="showcase">
+            <img src="assets/default-monochrome.svg" alt="">
+        </div>
+    </header>
+    <main>
+        <p class="intro">
+            Choose the currency and the amounts to get the exchange rate
+        </p>
+        <div class="calc-area">
+            <div class="horizontal-calc-option">
+                <select name="base-currency" id="base-currency"></select>
+                <input type="number" name="base-currency-value" id="base-currency-value">
+            </div>
+            <div class="horizontal-calc-option">
+                <button id="swap-btn">Swap</button>
+                <div id="conversion-rate-display"></div>
+            </div>
+            <div class="horizontal-calc-option">
+                <select name="exchange-currency" id="exchange-currency"></select>
+                <input type="number" name="exchange-currency-value" id="exchange-currency-value">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
