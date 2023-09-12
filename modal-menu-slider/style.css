@@ -146,6 +146,8 @@ article ul{
     width: 36%;
     background-color: whitesmoke;
     border-radius: 1rem;
+    animation-name: show;
+    animation-duration: 0.4s;
 }
 #sign-up-form .intro{
     margin-left: 1rem;
@@ -193,4 +195,23 @@ input{
     right: 0;
     z-index: 0;
     background-color: rgba(0,0,0,0.7);
+  }
+
+  @keyframes show {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+  }
+
+  button{
+    cursor: pointer;
   }
