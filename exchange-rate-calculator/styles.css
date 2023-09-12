@@ -99,3 +99,33 @@ input, select, #swap-btn{
     transition: all;
     transition-duration: 0.4s;
 }
+
+
+/* responsive queries */
+
+@media screen and (max-width: 810px) {
+    main{
+        width: 72%;
+    }
+    header{
+        width: 70%;
+    }
+}
+
+@media screen  and (max-width: 600px){
+    header{
+        width: 90%;
+    }
+
+    main{
+        width: 93%;
+    }
+    input, #exchange-currency-value{
+        font-size: 1.2rem;
+    }
+
+    #conversion-rate-display{
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+}
