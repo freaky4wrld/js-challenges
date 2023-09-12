@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="overlay" class="hide"></div>
     <header>
         <div id="sliding-menu" class="hide">
             <div id="profile-img">
@@ -34,6 +35,34 @@
                 </p>
                 <button id="sign-up">Sign Up</button>
             </div>
+        </div>
+        <div id="sign-up-form">
+            <div class="banner">
+                <h2 class="heading">Sign up</h2>
+                <button id="form-close">
+                    <img src="assets/close_FILL0_wght400_GRAD0_opsz24.svg">
+                </button>
+            </div>
+            <div class="intro">Register with us to get offers, support and more</div>
+            <form action="#">
+                  <div class="query">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Name">
+                  </div>
+                  <div class="query">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter Email">
+                  </div>
+                  <div class="query">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                  </div>
+                  <div class="query">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
+                  </div>
+                  <button class="form-btn">Submit</button>
+            </form>
         </div>
     </header>
     <main>
