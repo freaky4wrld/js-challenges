@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Exchange Rate Calculator</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
         <div class="calc-area">
             <div class="horizontal-calc-option">
                 <select name="base-currency" id="base-currency"></select>
-                <input type="number" name="base-currency-value" id="base-currency-value">
+                <input type="number" name="base-currency-value" id="base-currency-value" min="0">
             </div>
             <div class="horizontal-calc-option">
                 <button id="swap-btn">Swap</button>

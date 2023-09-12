@@ -40,6 +40,9 @@ function apiCall(){
                 displayedValue.innerText = roundedVal;
                 unitConversion(currency);
             });
+            exchangeValue.addEventListener('change',()=>{
+                unitConversion(currency)
+            })
             swapBtn.addEventListener('click',()=>{
                 // redundant calculation steps (need to be rectified)
                 // swapping the currency values
@@ -85,7 +88,7 @@ function createOptions(obj,parentElement){
 function unitConversion(obj){
     let exchangeDisplayValue = obj.rates[exchangeValue.value]/obj.rates[baseValue.value];
     let roundedVal = exchangeDisplayValue.toFixed(2);
-    conversionDisplay.innerText = `1${baseValue.value} = ${roundedVal}${exchangeValue.value}`;
+    conversionDisplay.innerText = `1 ${baseValue.value} = ${roundedVal} ${exchangeValue.value}`;
 }
 
 
