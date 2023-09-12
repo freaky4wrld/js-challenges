@@ -8,16 +8,16 @@
 </head>
 <body>
     <header>
-        <div id="sliding-menu">
+        <div id="sliding-menu" class="hide">
             <div id="profile-img">
                 <img src="assets/profile.avif" alt="profile-image">
             </div>
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>Portfolio</li>
-                    <li>Blog</li>
-                    <li>Contact Me</li>
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>Portfolio</li></a>
+                    <a href="#"><li>Blog</li></a>
+                    <a href="#"><li>Contact Me</li></a>
                 </ul>
             </nav>
         </div>
@@ -26,16 +26,19 @@
                 <img src="assets/menu_FILL0_wght400_GRAD0_opsz24.svg">
                 <img src="assets/close_FILL0_wght400_GRAD0_opsz24.svg" class="hide">
             </button>
-            <h1>Company Landing Page</h1>
-            <p class="intro">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Tempore, provident quos? Aut!
-            </p>
+            <div id="showcase-content">
+                <h1>Company Landing Page</h1>
+                <p class="intro">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tempore, provident quos? Aut!
+                </p>
+                <button id="sign-up">Sign Up</button>
+            </div>
         </div>
     </header>
     <main>
         <article>
-            <p class="heading">What is this landing page about?</p>
+            <h2 class="heading">What is this landing page about?</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Animi sunt quidem sapiente ratione vel neque amet maiores sequi dolorem repellendus? 
@@ -43,7 +46,7 @@
             </p>
         </article>
         <article>
-            <p class="heading">Tell me more</p>
+            <h2 class="heading">Tell me more</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Animi sunt quidem sapiente ratione vel neque amet maiores sequi dolorem repellendus? 
@@ -55,7 +58,7 @@
             </p>
         </article>
         <article>
-            <p class="heading">Benefits</p>
+            <h2 class="heading">Benefits</h2>
             <ul>
                 <li>Lifetime Access</li>
                 <li>30 Day Money Back</li>
