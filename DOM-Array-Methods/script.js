@@ -1,9 +1,12 @@
-const usersArray = [];
+let usersArray = [];
 const displayArea = document.getElementById('users-display');
 const addUserBtn = document.getElementById('add-user');
 const moneyDoubleBtn = document.getElementById('double-money');
+const showMillionairesBtn = document.getElementById('show-millonaires');
+const sortRichBtn = document.getElementById('sort');
+const totalBtn = document.getElementById('total-wealth');
 function generateUser(){
-    let newObject = {name:'',wealth: 0};
+    let newObject = {name: '',wealth: ''};
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://randomuser.me/api/', true);
     xhr.onload = function(){
@@ -21,20 +24,23 @@ function generateUser(){
 function addDefaultUser(){
     for(let i=0; i<3; i++){
         generateUser();
-        // console.log(usersArray);
     }
 }
 
 addDefaultUser();
 
-setTimeout(showDefault, 1000)
+setTimeout(showDefault, 1000);
 
 addUserBtn.addEventListener('click', ()=>{
+    removeDefault();
     generateUser();
-    setTimeout(createNewUser,400);
+    setTimeout(showDefault, 1000);
 })
 
-moneyDoubleBtn.addEventListener('click', moneyDouble)
+moneyDoubleBtn.addEventListener('click', moneyDouble);
+showMillionairesBtn.addEventListener('click', showMillionaires);
+sortRichBtn.addEventListener('click', sortRichest);
+totalBtn.addEventListener('click', totalWealth);
 
 function showDefault(){
     usersArray.forEach(user=>{
@@ -44,7 +50,7 @@ function showDefault(){
 
 function createHTML(user){
         let row = document.createElement('div');
-        row.className = 'row';
+        row.classList.add('row','child');
         let nameCol = document.createElement('div');
         nameCol.classList.add('col','bold');
         nameCol.innerText = user.name;
@@ -56,29 +62,51 @@ function createHTML(user){
         displayArea.appendChild(row);
 }
 
-function createNewUser(){
+
+function moneyDouble(){
+    removeDefault();
+    usersArray = usersArray.map((user)=>{
+        user.wealth = 2*user.wealth;
+        return user;
+    })
+    showDefault();
+   
+}
+
+
+function showMillionaires(){
+    removeDefault();
+    usersArray = usersArray.filter(user=>user.wealth>1000000);
+    showDefault();
+}
+
+function sortRichest(){
+    removeDefault();
+    usersArray = usersArray.sort((a,b)=>b.wealth-a.wealth);
+    showDefault();
+}
+
+function totalWealth(){
+        let totalSum = usersArray.reduce((total,user)=>(total+=user.wealth), 0);
+        console.log(totalSum);
         let row = document.createElement('div');
-        row.className = 'row';
+        row.classList.add('row','child','sum');
         let nameCol = document.createElement('div');
         nameCol.classList.add('col','bold');
-        nameCol.innerText = usersArray[usersArray.length-1].name;
+        nameCol.innerText = 'Total-wealth';
         let wealthCol = document.createElement('div');
         wealthCol.classList.add('col','normal');
-        wealthCol.innerText = `$ ${usersArray[usersArray.length-1].wealth}`;
+        wealthCol.innerText = `$ ${totalSum}`;
         row.appendChild(nameCol);
         row.appendChild(wealthCol);
         displayArea.appendChild(row);
 }
 
-function moneyDouble(){
-    let doubledArray = usersArray.map((user)=>{
-        return 2*user.wealth;
-    })
-    usersArray.forEach((user,index)=>{
-        user.wealth = doubledArray[index];
-    })
-    document.querySelectorAll('.normal').forEach((wealth,index) => wealth.innerText = `$ ${usersArray[index].wealth}`)
+function removeDefault(){
+    const childElement = document.querySelectorAll('.child');
+    for (let index = 0; index < childElement.length; index++) {
+        displayArea.removeChild(childElement[index]);
+    }
 }
-
 
 
