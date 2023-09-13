@@ -1,0 +1,90 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* page-bg and font */
+body{
+    background-color: #f5f6fa;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* header styles */
+header{
+    width: 63%;
+    margin: 3rem auto;
+    text-align: center;
+    color: #2f3640;
+}
+
+/* text-styles */
+h1{
+    font-size: 2.7rem;
+}
+h2{
+    font-size: 1.8rem;
+    color: #353b48;
+}
+.bold{
+    font-weight: 800;
+}
+.normal{
+    color: #7f8fa6;
+    font-weight: 395;
+}
+.col{
+    font-size: 1.2rem;
+    color: #192a56;
+}
+
+/* main-content styles */
+main{
+    width: 70%;
+    margin: 3rem auto;
+    display: flex;
+    gap: 2rem;
+}
+/* button-options styles */
+.options{
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+/* buttons-styling */
+button{
+    padding: 0.7rem 0.9rem;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    background-color: #dcdde1;
+    border: 2.7px solid #7f8fa6;
+    color: #192a56;
+    border-radius: 9px;    
+}
+/* users-display area styles */
+#array-display{
+    width: 70%;
+    min-height: 36vh;
+    padding: 0 2rem;
+    border-left: 3px solid #273c75;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+/* for maintaining a gap when appending element */
+#user-dispaly{
+    display: flex;
+    flex-direction: column;
+    gap: 0.72rem;
+}
+/* for horizontal aligning of content */
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* styles for the line-break */
+.line-break{
+    border: 2px solid #273c75;
+}
