@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(img/firework.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #dfe4ea;
+}
+
+
+.center{
+    width: 72%;
+    margin: 2rem auto;
+}
+.text-center{
+    text-align: center;
+}
+
+#countdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.numerals, .texts {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    text-align: center;
+}
