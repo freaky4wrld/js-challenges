@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +10,10 @@ body{
     background-image: url(img/firework.avif);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     color: #dfe4ea;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 4rem;
 }
 
 
@@ -19,13 +24,16 @@ body{
 .text-center{
     text-align: center;
 }
-
+h1{
+    font-size: 3rem;
+}
 #countdown{
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 2rem;
     gap: 2rem;
+    /* background-color: #2f354220; */
 }
 
 .numerals, .texts {
@@ -33,4 +41,30 @@ body{
     grid-template-columns: repeat(4,1fr);
     gap: 1rem;
     text-align: center;
+    font-family: 'Nanum Gothic Coding', cursive;
+}
+.texts{
+    font-size: 2rem;
+}
+.numerals{
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+#overlay-text{
+    font-size: 5.4rem;
+    color: #ffffff72;
+}
+
+.days{
+    color: #eccc68;
+}
+.hours{
+    color: #ff4757;
+}
+.minutes{
+    color: #F8EFBA;
+}
+.seconds{
+    color: #EE5A24;
 }

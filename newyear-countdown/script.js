@@ -45,10 +45,10 @@ function countDown(){
     days = hours == 0 ? days-- : days;
     hours = minutes == 0 ? hours -- : hours;
     minutes = seconds == 0 ? minutes -- : minutes;
-    dayDisplay.innerText = days;
-    hourDisplay.innerText = hours;
-    minuteDisplay.innerText = minutes;
-    secondDisplay.innerText = seconds;
+    dayDisplay.innerText = `${days = days<10 ? `0${days}` : days}`;
+    hourDisplay.innerText = `${hours = hours<10 ? `0${hours}` : hours}`;
+    minuteDisplay.innerText = `${minutes = minutes<10 ? `0${minutes}` : minutes}`;
+    secondDisplay.innerText = `${seconds = seconds<10 ? `0${seconds}` : seconds}`;
 }
 
 setInterval(countDown,1000);
