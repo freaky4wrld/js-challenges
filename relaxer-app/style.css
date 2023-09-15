@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:wght@700&display=swap');
+
 :root{
     --blue: #031827;
     --desaturated-white: #D9DED7;
@@ -26,22 +28,31 @@ header{
     margin: 2rem auto;
     text-align: center;
 }
-
+.head-instruct{
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+}
 main{
     width: 34%;
     margin: 4rem auto;
 }
-#gradient-circle{
+.gradient-circle{
     /* width: 80%; */
-    min-height: 57vh;
+    position: relative;
+    width: 430px;
+    height: 430px;
     border-radius: 50%;
     background-image: conic-gradient(var(--dark-blue-green) 0deg, var(--dark-blue-green) 135deg, var(--desaturated-white) 135deg, var(--desaturated-white) 225deg, var(--green-dark) 225deg, var(--green-dark) 360deg );
     padding: 1.2rem;
+    animation-name: grow-n-shrink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #inner-circle{
-    width: 100%;
-    min-height: 54vh;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     background-color: var(--blue);
     /* z-index: 2; */
@@ -50,16 +61,64 @@ main{
     align-items: center;
     justify-content: center;
 }
-
-#pointer{
-    position: relative;
-    top: -9px;
-    left: 210px;
-    width: 27px;
-    height: 27px;
+.instruct{
+    font-size: 3rem;
+    font-family: 'Raleway Dots', cursive;
+}
+.pointer{
+    
+    width: 34px;
+    height: 34px;
     background-color: #ffffff;
     border-radius: 50%;
     filter: brightness(1.5);
-    animation-name: rotate;
-    animation-duration: 4s;
+    margin: 0 auto;
+}
+.pointer-container{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: -2px;
+    left: 197px;
+    animation: rotate-circle 9s linear infinite ; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.grow{
+    animation: grow 3s linear forwards ;
+}
+
+.shrink{
+    animation: shrink 3s linear forwards ;
+}
+
+@keyframes grow{
+ from{
+    transform: scale(1);
+ }
+ to{
+    transform: scale(1.1);
+ }
+}
+
+@keyframes shrink {
+    from{
+       transform: scale(1.1);
+    }
+    to{
+       transform: scale(1);
+    }
+   }
+
+@keyframes rotate-circle {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
 }
