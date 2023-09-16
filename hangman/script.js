@@ -34,9 +34,6 @@ const guess = ()=>{
                 }
             }
         })
-        if(wrongWords.length==figureParts.length){
-            console.log('success');
-        }
 }
 
 const displayLetter = (className, parentName,content)=>{
