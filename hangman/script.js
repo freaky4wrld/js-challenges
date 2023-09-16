@@ -65,7 +65,6 @@ const showblanks =()=>{
         displayLetter('letters',wordsDisplay,randomWord[i]);
     }
 }
-
 console.log(randomWord);
 showblanks();
 const rightLetters = document.querySelectorAll('.letters');
