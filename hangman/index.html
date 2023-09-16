@@ -4,31 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Play</title>
-    <style>
-                .fig-contain {
-                    fill: transparent;
-                    stroke: #fff;
-                    stroke-width: 4px;
-                    stroke-linecap: round;
-                }
-                body{
-                    background-color: black;
-                    color: #fff;
-                }
-                .fig-part{
-                    display: none;
-                }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="center">
         <div id="info">
-            <h1>Hangman</h1>
+            <h1 class="gap">Hangman</h1>
             <p>Find the hidden word - Enter a letter</p>
         </div>
     </header>
     <main>
-        <div>
+        <div class="container">
             <div id="hangman-figure">
                 <svg height="250" width="200" class="fig-contain">
                     <!-- Rod -->
@@ -50,9 +36,13 @@
                   </svg>
             
             </div>
-            <div id="wrong-words-list"></div>
+           <div class="wrong-guess hide">
+                <h3 class="wrong">Wrong Guess</h3>
+                <div id="wrong-words-list">
+                </div>
+           </div>
         </div>
-        <div id="input-area"></div>
+        <div id="right-word"></div>
     </main>
     <script src="script.js"></script>
 </body>

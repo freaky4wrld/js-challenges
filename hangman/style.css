@@ -1,0 +1,82 @@
+:root{
+    --body-bg-color: #5758BB;
+    --hangman-fill-color: #D980FA;
+    --text-color: #D6A2E8;
+    --letter-border: #aaa69d;
+    --letters-color: #f7f1e3;
+    --wrong-heading: #ff5252;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--body-bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.center{
+    width: 54%;
+    margin: 3rem auto;
+    text-align: center;
+    color: var(--text-color);
+}
+.gap{
+    margin: 1rem auto;
+}
+main{
+    width: 57%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    gap: 3rem;
+}
+.fig-contain {
+    fill: transparent;
+    stroke: var(--hangman-fill-color);
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+.fig-part, .hide{
+    visibility: hidden;
+}
+
+#right-word{
+    width: 52%;
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;;
+}
+.letters{
+    width: 7%;
+    border-bottom: 4px solid var(--letter-border);
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 700;
+    color: var(--body-bg-color);
+}
+.wrong-guess{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.show, .wrong-guess{
+    color: var(--letters-color);
+}
+.wrong{
+    color: var(--wrong-heading);
+}
+#wrong-words-list{
+    display: flex;
+    font-size: 1.3rem;
+}
