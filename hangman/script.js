@@ -16,13 +16,16 @@ let index = 0;
 let endPromptMessage = 'Unfortunately you lost !!😈';
 const allowedCharacters = 'abcdefghijklmnopqrstuvwxyz';
 const finalResultShow = ()=>{
+    console.log('finalResult is called');
     if(correctWords.length==randomWord.length){
         endPromptMessage = 'Congratulations you won!!😇';
     }
     if(wrongWords.length==figureParts.length || correctWords.length==randomWord.length){
         playAgainBtn.previousElementSibling.innerText = endPromptMessage;
         endPrompt.style.display = 'flex';
-    }
+    }   
+    
+    
 }
 
 const guess = ()=>{
@@ -42,15 +45,13 @@ const guess = ()=>{
                             displayLetter('wrong-guess',wrongWordsDisplay,currentWord);
                             figureParts[index].classList.remove('fig-part');
                             index++;
-                        }else{
-                            repeatPrompt.open = true;
-                            setTimeout(()=>{repeatPrompt.open = false;},2000);
                         }
                     }
                 }
             }
+            finalResultShow();
         })
-        setInterval(finalResultShow,200);
+
 }
 
 const displayLetter = (className, parentName,content)=>{
@@ -67,19 +68,23 @@ const showblanks =()=>{
     }
 }
 const  reset = ()=>{
-    for (let index = 0; index < randomWord.length; index++) {
-        let component = wordsDisplay.firstElementChild;
-        wordsDisplay.remove(component);
+    let wrongWordsList = document.getElementById("wrong-words-list");
+    while (wrongWordsList.firstChild) {
+        wrongWordsList.removeChild(wrongWordsList.firstChild);
     }
-    const display = document.createElement('div');
-    display.setAttribute('id','right-word');
-    document.querySelector('main').appendChild(display);
+    const parentWrong = document.querySelector('.wrong-guess');
+    parentWrong.classList.add('hide');
+    let rightWordsList = document.getElementById('right-word');
+    while(rightWordsList.firstChild){
+        rightWordsList.removeChild(rightWordsList.firstChild);
+    }
+
+
 }
 console.log(randomWord);
 showblanks();
 let rightLetters = document.querySelectorAll('.letters');
 guess();
-
 
 playAgainBtn.addEventListener('click',()=>{
     endPrompt.style.display = 'none';
@@ -88,14 +93,10 @@ playAgainBtn.addEventListener('click',()=>{
     console.log(randomWord)
     wrongWords.length = 0;
     correctWords.length = 0;
-    console.log(wrongWords);
-    console.log(correctWords);
     showblanks();
     rightLetters = document.querySelectorAll('.letters');
-    console.log(rightLetters);
     index = 0;
     endPromptMessage = 'Unfortunately you lost !!😈';
-    guess();
 })
 
 
