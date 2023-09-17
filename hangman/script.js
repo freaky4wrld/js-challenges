@@ -61,13 +61,42 @@ const displayLetter = (className, parentName,content)=>{
 }
 
 const showblanks =()=>{
+    let wordsDisplay = document.querySelector('#right-word');
     for(let i=0; i<randomWord.length; i++){
         displayLetter('letters',wordsDisplay,randomWord[i]);
     }
 }
+const  reset = ()=>{
+    for (let index = 0; index < randomWord.length; index++) {
+        let component = wordsDisplay.firstElementChild;
+        wordsDisplay.remove(component);
+    }
+    const display = document.createElement('div');
+    display.setAttribute('id','right-word');
+    document.querySelector('main').appendChild(display);
+}
 console.log(randomWord);
 showblanks();
-const rightLetters = document.querySelectorAll('.letters');
+let rightLetters = document.querySelectorAll('.letters');
 guess();
+
+
+playAgainBtn.addEventListener('click',()=>{
+    endPrompt.style.display = 'none';
+    reset();
+    randomWord = words[Math.floor(Math.random()*words.length)];
+    console.log(randomWord)
+    wrongWords.length = 0;
+    correctWords.length = 0;
+    console.log(wrongWords);
+    console.log(correctWords);
+    showblanks();
+    rightLetters = document.querySelectorAll('.letters');
+    console.log(rightLetters);
+    index = 0;
+    endPromptMessage = 'Unfortunately you lost !!😈';
+    guess();
+})
+
 
 
