@@ -34,6 +34,7 @@ const guess = ()=>{
                             rightLetters[randomWord.search(e.key)].classList.add('show');
                             correctWords.push(e.key);
                         }
+                        console.log(`correct: ${correctWords}`);
                     }else {
                         wrongWordsDisplay.parentElement.classList.remove('hide');
                         if(!wrongWords.includes(e.key)){
@@ -42,9 +43,12 @@ const guess = ()=>{
                             displayLetter('wrong-guess',wrongWordsDisplay,currentWord);
                             figureParts[index].classList.remove('fig-part');
                             index++;
-                        }else{
+                            console.log(`wrong: ${wrongWords}`);
+                        }
+                        else{
                             repeatPrompt.open = true;
                             setTimeout(()=>{repeatPrompt.open = false;},2000);
+                            console.log(`wrong-repeat ${e.key}`);
                         }
                     }
                 }
@@ -67,13 +71,18 @@ const showblanks =()=>{
     }
 }
 const  reset = ()=>{
-    for (let index = 0; index < randomWord.length; index++) {
-        let component = wordsDisplay.firstElementChild;
-        wordsDisplay.remove(component);
+    let wrongWordsList = document.getElementById("wrong-words-list");
+    while (wrongWordsList.firstChild) {
+        wrongWordsList.removeChild(wrongWordsList.firstChild);
     }
-    const display = document.createElement('div');
-    display.setAttribute('id','right-word');
-    document.querySelector('main').appendChild(display);
+    const parentWrong = document.querySelector('.wrong-guess');
+    parentWrong.classList.add('hide');
+    let rightWordsList = document.getElementById('right-word');
+    while(rightWordsList.firstChild){
+        rightWordsList.removeChild(rightWordsList.firstChild);}
+    figureParts.forEach((part)=>{
+        part.classList.add('fig-part')
+    })
 }
 console.log(randomWord);
 showblanks();
@@ -97,6 +106,3 @@ playAgainBtn.addEventListener('click',()=>{
     endPromptMessage = 'Unfortunately you lost !!😈';
     guess();
 })
-
-
-
